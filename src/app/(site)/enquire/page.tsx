@@ -1,0 +1,8 @@
+import { getSettings } from '@/lib/content'
+import { EnquiryForm } from '@/components/EnquiryForm'
+export const metadata = { title: 'Start a Conversation', description: 'Enquire about bridal, celebrity, event, personal styling, or a wardrobe consultation with Styled by Al.', alternates: { canonical: '/enquire' } }
+export default async function EnquirePage({ searchParams }: { searchParams: Promise<{ service?: string; received?: string }> }) {
+  const settings = await getSettings()
+  const params = await searchParams
+  return <><section className="page-intro"><span className="eyebrow">THE FIRST CONVERSATION</span><h1>Something<br /><i>uniquely yours.</i></h1></section><section className="enquire-layout"><aside><p className="enquire-intro">A moment. A mood.<br />A new way of seeing yourself.</p><p>Share what you have in mind.<br />Let’s discover the possibilities together.</p><div className="contact-details"><span className="eyebrow">BASED IN</span><p>{settings.location}</p>{settings.contactEmail && <><span className="eyebrow">WRITE TO THE STUDIO</span><a href={`mailto:${settings.contactEmail}`}>{settings.contactEmail}</a></>}{settings.whatsapp && <a href={`https://wa.me/${settings.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noreferrer">A conversation on WhatsApp ↗</a>}{settings.instagram && <a href={settings.instagram} target="_blank" rel="noreferrer">Instagram ↗</a>}</div><span className="enquire-asterisk" aria-hidden="true">✳</span></aside><EnquiryForm service={params.service} whatsapp={settings.whatsapp || ''} received={params.received === '1'} startedAt={Date.now()} /></section></>
+}

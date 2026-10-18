@@ -1,0 +1,14 @@
+node_modules/
+.next/
+.env*
+!.env.example
+data/
+playwright-report/
+test-results/
+*.tsbuildinfo
+*.tar.gz
+deployment-info.json
+OWNER-ACCESS.txt
+artifacts/
+__pycache__/
+*.pyc

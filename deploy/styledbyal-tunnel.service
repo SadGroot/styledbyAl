@@ -1,0 +1,19 @@
+[Unit]
+Description=Styled by Al temporary Cloudflare preview
+After=network-online.target styledbyal.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /opt/styledbyal/ops/tunnel.py
+Restart=always
+RestartSec=10
+TimeoutStopSec=20
+KillMode=control-group
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/etc/styledbyal /var/lib/styledbyal
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,8 @@
+:root { --theme-success-500: #9b855f; }
+.studio-brand { font-family: Georgia, serif; font-size: 32px; color: inherit; padding: 12px; }
+.studio-brand i { font-weight: 400; }
+.studio-intro { margin: 0 0 32px; padding: 28px; border: 1px solid var(--theme-elevation-150); }
+.studio-intro h2 { font-family: Georgia, serif; font-size: 32px; margin: 0 0 12px; }
+.studio-intro p { line-height: 1.7; margin: 8px 0; }
+.studio-intro a { text-decoration: underline; }
+.studio-stats { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 20px; font-size: 14px; }

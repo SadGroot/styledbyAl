@@ -1,0 +1,8 @@
+[Unit]
+Description=Consistent Styled by Al database and media backup
+After=styledbyal.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /opt/styledbyal/ops/backup.py
+Nice=15
